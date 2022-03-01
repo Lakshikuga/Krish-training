@@ -23,7 +23,7 @@ public class Jump {
 				distance_jumped+=3;
 			}
 			
-			if(distance_jumped > distance) {
+			if(distance_jumped >= distance) {
 				System.out.println("He jumped for " + time_taken_to_jump +"s");
 				System.out.println("He jumped " + distance_jumped +"m");
 				break;
@@ -34,14 +34,14 @@ public class Jump {
 				distance_jumped+=1;
 			}
 
-			if(distance_jumped > distance) {
+			if(distance_jumped >= distance) {
 				System.out.println("He jumped for " + time_taken_to_jump +"s");
 				System.out.println("He jumped " + distance_jumped +"m");
 				break;
 			}
 
 			else{
-				time_taken_to_jump+=3; //distance_jumped=18m
+				time_taken_to_jump+=3;
 			}
 			
 		}
