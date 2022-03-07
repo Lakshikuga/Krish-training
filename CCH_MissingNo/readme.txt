@@ -1,0 +1,1 @@
+Q : Write a program to find the missing no. of a given sequence.

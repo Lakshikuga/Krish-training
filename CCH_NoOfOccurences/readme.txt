@@ -1,0 +1,2 @@
+Q : Write a program to find the no. of occurences of each letter respective if the case. E.g. If N & n, you should find it as 2 occurences of the letter and print
+that in alphabetical order. Skip all the non-printable cases such as spaces.
