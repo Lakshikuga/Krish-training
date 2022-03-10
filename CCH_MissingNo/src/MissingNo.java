@@ -40,8 +40,8 @@ public class MissingNo {
             }
         }
         System.out.println("");
+
         //printing the sorted sequence
-        for(int i=0; i<numList.size(); i++){}
         System.out.print("sorted sequence : " + numList + " ");
 
         /*for (int i:numList) {
