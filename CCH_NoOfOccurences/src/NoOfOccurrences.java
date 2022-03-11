@@ -24,7 +24,6 @@ public class NoOfOccurrences {
                     wordArr[p] = tempCh;
                 }
             }
-            //System.out.println(wordArr[i]);
         }
 
         //Counting the characters irrespective of case.
@@ -64,16 +63,3 @@ public class NoOfOccurrences {
 
     }
 }
-
-
-//PRINTING IN ALPAHABETICAL ORDER
-        /*for(int k=0; k<wordArr.length-1; k++){
-            for(int l=k+1; l<wordArr.length;l++){
-                if(wordArr[l] < wordArr[k]){
-                    char temp=wordArr[k];
-                    wordArr[k] = wordArr[l];
-                    wordArr[l] = temp;
-                }
-            }
-            System.out.print(wordArr[k]);
-        }*/
