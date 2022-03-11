@@ -15,9 +15,22 @@ public class NoOfOccurrences {
         //divide the string into charaters and store in an array.
         char wordArr[] = word.toCharArray();
 
+        //sorting the word array to alphabetical order
+        for(int i=0; i< wordArr.length; i++){
+            for(int p=i+1; p<wordArr.length; p++){
+                if(wordArr[p]<wordArr[i]){
+                    char tempCh = wordArr[i];
+                    wordArr[i] = wordArr[p];
+                    wordArr[p] = tempCh;
+                }
+            }
+            //System.out.println(wordArr[i]);
+        }
+
         //Counting the characters irrespective of case.
         for(int i=0; i<wordArr.length; i++){
             count = 1;
+            //this for loop identifies as many occurrences irrespective of the case.
             for (int j=i+1; j<wordArr.length; j++) {
                 //when both letters are capital or simple
                 if ((Character.isUpperCase(wordArr[i]) && Character.isUpperCase(wordArr[j])) || (!Character.isUpperCase(wordArr[i]) && !Character.isUpperCase(wordArr[j]))) {
@@ -46,7 +59,6 @@ public class NoOfOccurrences {
             //printing only the characters that has been visited and not printing those that were revisited!
             if(count>=1 && wordArr[i]!='0') {
                 System.out.println(wordArr[i] + " " + "-" + "" + count);
-
             }
         }
 
