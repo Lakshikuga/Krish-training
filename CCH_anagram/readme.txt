@@ -1,0 +1,1 @@
+Write a nodejs program to find given 2 words are anagram words of each other.
