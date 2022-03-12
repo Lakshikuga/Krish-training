@@ -6,13 +6,14 @@ var numArray = [];
 
 for(let i=0; i<Number(count); i++){
     const num = prompt("Enter a number to the given series : ");
+    //casting input to Number
     numArray[i] = Number(num);
 }
 
 findThirdLargest(numArray);
 
 function findThirdLargest(numArray){
-    
+
     //sort the number array in descending order
     for(let i=0; i<numArray.length; i++){
         for(let j=i+1; j<numArray.length; j++){
