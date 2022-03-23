@@ -16,6 +16,22 @@ public class Tester {
         //calling the bark() method. Telling it to bark using
         //the dot operator on the variable d to call bark()
         d.bark();
+
+
+        //movie class
+
+        Movie one = new Movie();
+        one.title = "Gone with the Stock";
+        one.genre = "Tragic";
+        one.rating = -2;
+
+        Movie two = new Movie();
+        two.title = "Lost in Cubicle Space";
+        two.genre = "Comedy";
+        two.rating = 5;
+
+        two.playIt();
+
     }
 
 }
