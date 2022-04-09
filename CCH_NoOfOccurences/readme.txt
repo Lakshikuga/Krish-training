@@ -6,6 +6,5 @@ Rules
 
 1. Spaces are skipped or removed.
 2. Finds no. of occurrences irrespective of the case.
+3. Print the final array in alphabetical order.
 
-Things I could not do in the problem
-Could not print the final array in alphabetical order.
