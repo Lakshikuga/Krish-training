@@ -39,7 +39,7 @@ public class graphImpl {
         System.out.println("Depth First Search for the graph is as follows : ");
         stack.push(rootNode); // 0
 
-        while(!stack.isEmpty()){
+        while(!stack.isEmpty()){ //iterate untill stack is empty
             int topNode = stack.pop(); //0 3 4 2 1 2 1    //0 1 3 4 2  2 3
 
             if(!nodeVisited[topNode]){
