@@ -6,8 +6,10 @@ import java.util.Scanner;
 public class Application {
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
-        
-        graphImpl graph = new graphImpl(7);
+
+        //graphImpl graph = new graphImpl(7);
+
+        graphImpl graph = new graphImpl(5);
 
         /*graph.addEdges(0, 1);
         graph.addEdges(0, 3);
