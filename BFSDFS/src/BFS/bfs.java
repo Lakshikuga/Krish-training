@@ -20,7 +20,7 @@ public class bfs {
         nodeVisited[rootNode] = true;
 
         System.out.println("The breadth first search is as follows: ");
-        
+
         while (!queue.isEmpty()) {
             rootNode = queue.poll();
             System.out.print(rootNode+ " ");
@@ -28,11 +28,10 @@ public class bfs {
             for (int i = 0; i < graphImpl.am.size(); i++) {
                 for (int j = 0; j < graphImpl.am.get(rootNode).size(); j++) {
                     adjNode = graphImpl.am.get(rootNode).get(j); // 1 3 4 //here 0th node has 1 3 4
-                    //System.out.print("" + a + ""); //4 3 1
+
                     if (nodeVisited[adjNode] != true) { // checking if the node has not been visited
                         nodeVisited[adjNode] = true; //then set node to true
                         queue.add(adjNode); //at the end of 2nd for loop, there ll be 1 3 4 in the queue
-                        //System.out.print(" " + a + " "); //4 3 1
                     }
 
                 }
