@@ -10,18 +10,7 @@ public class bfs {
     int size = graphImpl.noOfVertices;
 
     public void traverse(int rootNode) {
-
-        //adding edges to each vertex
-        graphImpl.addEdge(0,1);
-        graphImpl.addEdge(0,4);
-        graphImpl.addEdge(0 , 3);
-        graphImpl.addEdge(1, 2);
-        graphImpl.addEdge(3,5);
-        graphImpl.addEdge(4, 5);
-
-
-        graphImpl.printGraph(graphImpl.am);
-
+        graphImpl.addEdge(graphImpl.noOfVertices);
 
         boolean nodeVisited[] = new boolean[size];
         int adjNode = 0;
@@ -30,6 +19,8 @@ public class bfs {
         queue.add(rootNode);
         nodeVisited[rootNode] = true;
 
+        System.out.println("The breadth first search is as follows: ");
+        
         while (!queue.isEmpty()) {
             rootNode = queue.poll();
             System.out.print(rootNode+ " ");
