@@ -18,3 +18,11 @@ public class MainController {
     }
 
 }
+
+
+
+/*
+Controller
+Service
+Repository - deals with database, but we have to have a model.
+ */

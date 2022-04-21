@@ -9,6 +9,9 @@ import org.springframework.stereotype.Component;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+/* here we are creating another actuator endpoint */
+
+
 @Component  //in Spring, when you annotate something with a "Component", it creates a BEAN
 //you can annotate with either a Service OR Repository annotations because both extend from Component.
 @Endpoint(id = "stage")//The moment you use Component which creates a bean and along with the Endpoint, automatically this service will expose via an
