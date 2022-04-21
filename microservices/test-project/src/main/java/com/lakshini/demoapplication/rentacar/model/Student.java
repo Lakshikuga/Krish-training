@@ -77,4 +77,14 @@ database url
 username
 password
 schema name
+
+mysql-connector-java dependency in pom get automatically imported!!!
+
+after the configurations, the service knows
+1. schema name
+2. username
+3.password
+4.the driver to connect, i.e. mysql-jdbc-driver
+
+after this, we need to create an endpoint in the controller
  */
