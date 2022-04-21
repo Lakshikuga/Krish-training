@@ -52,8 +52,26 @@ public class MainController {
         in the service, i.e. the StudentServiceImpl class, we have annotated the class as Service, therfore spring
         know it is a service and it will create the bean. From here the StudentRepository takes over.
 
-        in the StudentRepository interface, if we comment out the save() method, the save() method will fail.
+        in the StudentRepository interface, if we comment out the save() method, when you go to StudentServiceImpl class, the save() method will fail.
+        but if we extend the StudentRepository from the JpaRepository or CrudRepository, the save() method does not fail in the Impl class.
 
+        This is because JpaRepository and CrudRepository both interfaces extend Repository interface. If the Repository interface
+        has the save() method, then Jpa or CrudRepository will anyway have that method so you dont need to mention it inside the StudentRepository interface when it
+        extends Jpa or CrudRepository.
+
+        Repository is the top most one, when it comes to the Jpa or CrudRepository , save() method is already implemented.
+        */
+
+        /*
+        when running the application, you may have an error as follows :
+        Unknown column 'student0_.first_name' in 'field list' -> this is a mixup with a naming strategy
+
+        in our code we have the firstName like this, in the db also same.
+
+        This is because when it converts the data in the model class to the sql query (model to the query), it uses a different
+        naming strategy, i.e. when there s a capital letter, it replaces that with an underscore. So,to correct this, we add a configuration
+        for the naming strategy in the application.properties file. Here we are configuring the naming strategy so that it takes the name as it is in
+        the model.
          */
     }
 }

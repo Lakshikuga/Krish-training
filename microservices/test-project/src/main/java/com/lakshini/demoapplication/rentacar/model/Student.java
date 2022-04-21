@@ -12,12 +12,12 @@ import javax.persistence.Table;
 @Table(name = "student") //specifying the table name as student as created in mysql
 public class Student {
 
+    @Id
     private int id;
     private String firstName;
     private String lastName;
 
 
-    @Id
     public int getId() {
         return id;
     }

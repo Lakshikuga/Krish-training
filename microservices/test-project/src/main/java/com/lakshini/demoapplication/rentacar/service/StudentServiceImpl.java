@@ -33,6 +33,7 @@ public class StudentServiceImpl implements StudentService{
     @Autowired
     StudentRepository studentRepository;
     public Student save(Student student) {
+
         return studentRepository.save(student);
     }
 }
