@@ -73,6 +73,31 @@ public class MainController {
         for the naming strategy in the application.properties file. Here we are configuring the naming strategy so that it takes the name as it is in
         the model.
          */
+
+        /*video 4
+        first changing the database to sample_db2, and you ll get this error : Unknown database 'sample_db2', becoz there s no sample_db2 yet!!!
+        so add the createDatabaseIfNotExist=true to the URL in the application.properties file.
+        Then add the jpa-ddl-auto=create property to application.properties file to create the table under sample_db2 database
+        with the columns for the properties in the model class. THEREFORE THIS CREATES TABLES AUTOMATICALLY.
+
+        STOP THE SERVICE AND REFRESH DATABASE IN MYSQL, AND THE TABLES WILL BE STILL THERE. IF YOU TERMINATE THE SERVICE STILL THE TABLES
+        REMAIN IN MYSQL.
+
+        change create to create-drop -> when the service terminates it will also drop the table from the database.
+        IT WILL CREATE THE TABLES IN THE DATABASE WHEN SERVICE STARTS AND DROPS THE TABLES WHEN SERVICE TERMINATES.
+
+        THIS IS THE FEATURE WHERE EVERYTIME U START THE SERVICE YOU HAVE A FRESH SET OF TABLES, IF U WANT TO PRESERVE THE DATA, YOU HAVE TO
+        GO WITH THE CREATE MODE.
+
+        IN CREATE MODE, IT WILL CREATE ONLY IF TABLES DO NOT EXIST IN THE DATABASE. THE PROBLEM HERE IS, EVENTHOUGH TABLES REMAIN IN DATABASE,
+        EVERYTIME YOU START THE SERVICE, IT WILL RECREATE THE TABLES, LOSING ALL THE DATA PREVIOUSLY STORED.
+
+        THE DIFFERENCE BETWEEN CREATE AND CREATE-DROP is that in CREATE MODE, THE TABLE WILL REMAIN, BUT DATA WILL BE LOST ON RESTARTING THE SERVICE.
+        BUT IN CREATE-DROP MODE, THE TABLE WILL DROP ON TERMINATING THE SERVICE.
+
+        UPDATE MODE - IT WILL CREATE THE TABLE IF IT DOES NOT EXIST AND IF U ADD SOMETHING TO THE MODEL CLASS, IT WILL ADD THOSE COLUMNS TO
+        THE TABLE BUT WITH RESTRICTIONS. AND ALSO IF U SHUTDOWN AND RESTART THE SERVICE, THE DATA/RECORDS ALSO WILL REMAIN UNLIKE IN CREATE MODE.
+         */
     }
 }
 
