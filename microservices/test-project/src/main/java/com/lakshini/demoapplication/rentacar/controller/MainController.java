@@ -3,10 +3,8 @@ package com.lakshini.demoapplication.rentacar.controller;
 import com.lakshini.demoapplication.rentacar.model.Student;
 import com.lakshini.demoapplication.rentacar.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class MainController {
@@ -98,6 +96,43 @@ public class MainController {
         UPDATE MODE - IT WILL CREATE THE TABLE IF IT DOES NOT EXIST AND IF U ADD SOMETHING TO THE MODEL CLASS, IT WILL ADD THOSE COLUMNS TO
         THE TABLE BUT WITH RESTRICTIONS. AND ALSO IF U SHUTDOWN AND RESTART THE SERVICE, THE DATA/RECORDS ALSO WILL REMAIN UNLIKE IN CREATE MODE.
          */
+        }
+          /*
+        Finding a record - > code in StudentServiceImpl class.
+         */
+
+    //mapping fetch data in controller class
+    @RequestMapping(value = "/student", method = RequestMethod.GET) //always go with the entity name or in this case Student (the model class) and the REST verb needs to vary.
+    public ResponseEntity<Student> fetchStudent(@RequestParam int id) { //sending the request parameter as id of student. This id is passed in the GET request.
+        Student student = studentService.fetchStudentById(id);
+
+            if(student == null) {
+                return ResponseEntity.notFound().build();  //if no student record in database.
+            }
+            else{
+                return ResponseEntity.ok().body(student); //returns Student type object in the response body.
+            }
+
+
+            /*
+            Rather than returning a Student object as a response, we are using a ResponseEntityof type Student returning a response.
+            Becoz there may be student records or there wont be student record.
+            If there is not a single student record, the right practice is to have a "not found" response. In this case we can return a
+            response code based on if a student record is found or not.
+
+            In insomnia, we first insert the records using the save() method and the POST REQUEST
+            Then, get each record by passing the id as parameter, url as follows: http://localhost:8080/student?id=1 as GET REQUEST.
+
+            When the record with a specific Id is not found in the database the fetch() method will return 404 NOT FOUND response in insomnia
+            or else it will return a json response of the id, firstName and lastName (all the details).
+            */
+
+        /* VIDEO 4
+        insert record
+        update record
+        use features to generate these database and tables automatically, i.e. by not creating THE DATABASE OR THE TABLES AND THEIR COLUMNS MANUALLY IN MYSQL.
+        */
+
     }
 }
 

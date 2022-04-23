@@ -8,7 +8,11 @@ always gud to go with interface driven programming. Code to an interface but not
 public interface StudentService {
 
     Student save(Student student);
+
+    /*
+    the next will be coding the class implementing the interface.
+    */
+
+    Student fetchStudentById(int id);
+
 }
-/*
-the next will be coding the class implementing the interface.
- */
