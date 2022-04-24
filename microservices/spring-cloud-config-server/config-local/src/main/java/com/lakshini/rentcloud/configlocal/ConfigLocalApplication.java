@@ -130,4 +130,8 @@ it will give the response as follows:
 	]
 }
 
+video 6 - how to host a configuration store in github
+
+these are 2 parts. Configuration server and configuration store. Configuration server u cn run anywhere, e.g.AWS or local machine.
+In this video, the real configurations are going to be stored in github. So, for that we ll create a repository in github.
  */
