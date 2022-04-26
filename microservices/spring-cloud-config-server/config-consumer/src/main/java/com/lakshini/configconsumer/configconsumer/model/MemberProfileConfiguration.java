@@ -58,4 +58,33 @@ but we only get this property, to get both the properties, we have mentioned 2 p
 
 the method returns the String but when serialising into json, it always uses the bean naming convention. Bean naming convention means u need ti have getters and setters.
 so making minRentPeriod() to getMinRentPeriod()
+
+when u run this url :http://localhost:8080/profile
+we get the following response :
+{
+	"minRentPeriod": "7",
+	"defaultModel": "cross over"
+}
+
+this says we get both the properties in the MemberProfileConfiguration class.
+
+if u want, u cn fetch this json response to a UI, i.e. displaying the model and the min-rent-period in the browser.
+For that u need to make the profileController class a Controller instead of RestController, because we r not using the restendpoint anymore to
+get a response.
+
+Then pass a Model class of the org.springframework.ui package as a parameter to the getConfig method of the profileController class.
+We return a String instead of a class. Since it is returning to the UI, WE NEED TO CREATE A WEBPAGE.
+
+Under templates, create a new file, name it "mprofile". You have to match the same name as the string u return in profileController class. Here we use "mprofile"
+rather than "profile" becoz to avoid confusions with the RequestMapping (the URL).
+
+in the html page, inside <p> tags get the values of the properties based on the model name given in the profileController class.
+then add thymeleaf dependency to pom file, reload the project to load the added dependency.
+
+run the config-consumer, before running this, make sure config-server is already running at port 8191.
+in the browser, type the url with the endpoint : http://localhost:8080/profile
+
+u ll get the values of the properties printed in the browser.
+
+The point here is, u cn even get the configurations not only as a REST service, anywhwere within the service, we cn access these configurations.
  */

@@ -94,3 +94,22 @@ so likewise even after mentioning the port for config-consumer as 8080, in appli
 
 i did the same and now config-consumer is running fine in port 8080.
 */
+
+/*
+Ok, A TOTAL OVERVIEW
+
+So, in the config-consumer service's bootstrap.yml file, we configured this service to fetch configs from configuration server running at port 8191.
+the MemberProfileConfiguration class, we inject to the Environment, from the environment variable, we r trying to access the value for the property, vehicle.default.model
+but in the config-consumer's environment, i.e. its resources folder doesnt have any such property in their .properties file, we dnt have that property right?
+the config-consumer service is configured to go and ask configurations from the localhost port 8191 (the configration server running at port 8191).
+the 8191 configuration server is pointed to the github.
+so configuration server fetches the configurations from the github and gives it to the config-consumer service (known as membership service because in the MemberProfileConfiguration class, we r mentioning a property
+of the mem-service (check membership.yml file)
+
+so, the config-consumer uses the fetched configurations to return the values of the properties.
+
+SO FAR IN VIDEOS 5 & 6 WE LEARNT :
+1. HOW WE CAN CREATE A CONFIGURATION SERVER LOCALLY IN THE LOCAL FILE SYSTEM
+2. HOW WE CAN HOST A CONFIGURATION SERVER IN GITHUB
+3. HOW WE CAN CONSUME THESE CONFIGURATIONS TO OR IN OUR SERVICE.
+ */
