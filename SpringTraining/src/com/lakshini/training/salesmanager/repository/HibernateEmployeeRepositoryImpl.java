@@ -16,7 +16,7 @@ public class HibernateEmployeeRepositoryImpl implements EmployeeRepository {
 		
 		List<Employee> employees = new ArrayList<Employee>();
 		
-		//invoke object of Employee
+		//invoke object of Employee, i.e. Employee object is created
 		Employee employee = new Employee();
 		employee.setEmployeeLocation("Dehiwela");
 		employee.setEmployeeName("Lakshini");
