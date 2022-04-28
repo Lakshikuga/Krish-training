@@ -16,6 +16,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 	
 	private EmployeeRepository employeeRepository;
 	
+	public EmployeeServiceImpl() {
+		//default constructor to be used when autowiring byType or byName
+	}
 	//creating a constructor method on service class to understand Constructor injection (Dependency injection)
 	public EmployeeServiceImpl(EmployeeRepository employeeRepository) {
 		this.employeeRepository = employeeRepository;
