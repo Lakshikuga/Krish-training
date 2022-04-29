@@ -14,7 +14,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 	
 	//EmployeeRepository employeeRepository = new HibernateEmployeeRepositoryImpl();
 	
-	@Autowired //member variable injection
+	//@Autowired //member variable injection
 	EmployeeRepository employeeRepository;
 	
 	/*if it is setter injection, so there should be no-arg constructor, so @Autowired annotation should not be for the 
@@ -37,7 +37,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 		return employeeRepository;
 	}
 	
-	//@Autowired //Setter injection
+	@Autowired //Setter injection
 	public void setEmployeeRepository(EmployeeRepository employeeRepository) {
 		System.out.println("Setter injection fired");
 		this.employeeRepository = employeeRepository;
