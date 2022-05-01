@@ -49,6 +49,7 @@ public class ApplicationConfiguration {
 		return new HibernateEmployeeRepositoryImpl();
 	}
 	
+	//loading property file 
 	@Bean
 	public static PropertySourcesPlaceholderConfigurer getPropertySourcesPlaceholderConfigurer() {
 		return new PropertySourcesPlaceholderConfigurer();
