@@ -1,15 +1,21 @@
 import java.util.List;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 import com.lakshini.training.salesmanager.model.Employee;
 import com.lakshini.training.salesmanager.service.EmployeeService;
-import com.lakshini.training.salesmanager.service.EmployeeServiceImpl;
 
 public class Application {
 	
 	public static void main(String args[]) {
 		
-		EmployeeService employeeService = new EmployeeServiceImpl();
+		//EmployeeService employeeService = new EmployeeServiceImpl();
 		
+		ApplicationContext applicationContext = new AnnotationConfigApplicationContext(ApplicationConfiguration.class);
+		
+		
+		EmployeeService employeeService = applicationContext.getBean("employeeService", EmployeeService.class);
 		
 		List<Employee> employees = employeeService.getAllEmployees();
 		

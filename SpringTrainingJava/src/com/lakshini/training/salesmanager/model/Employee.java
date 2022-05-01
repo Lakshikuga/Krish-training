@@ -1,5 +1,6 @@
 package com.lakshini.training.salesmanager.model;
 
+
 public class Employee {
 	
 	String employeeName;

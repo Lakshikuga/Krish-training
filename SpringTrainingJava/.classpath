@@ -11,5 +11,6 @@
 	<classpathentry kind="lib" path="libs/spring-context-5.2.9.RELEASE.jar"/>
 	<classpathentry kind="lib" path="libs/spring-core-5.2.9.RELEASE.jar"/>
 	<classpathentry kind="lib" path="libs/spring-expression-5.2.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="libs/spring-aop-5.2.9.RELEASE.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
