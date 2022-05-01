@@ -13,4 +13,7 @@
 	   <context:annotation-config/>
 	   <context:component-scan base-package="com.lakshini"/>
 	   
+	   <!-- Changing project to read property file -->
+	   <context:property-placeholder location="application.properties" />
+	   
 </beans>
