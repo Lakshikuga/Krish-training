@@ -1,7 +1,9 @@
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.Scope;
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 import com.lakshini.training.salesmanager.repository.EmployeeRepository;
 import com.lakshini.training.salesmanager.repository.HibernateEmployeeRepositoryImpl;
@@ -10,6 +12,7 @@ import com.lakshini.training.salesmanager.service.EmployeeServiceImpl;
 
 @Configuration
 @ComponentScan(basePackages = "com.lakshini") //it can handle byName and byType both, byName refer @Bean name and byType refer instance type.
+//@PropertySource("application.properties") //loading property file with java.
 public class ApplicationConfiguration {
 
 	@Bean(name = "employeeService")
@@ -44,5 +47,10 @@ public class ApplicationConfiguration {
 	@Bean(name = "employeeRepository")
 	public EmployeeRepository getEmployeeRepository() {
 		return new HibernateEmployeeRepositoryImpl();
+	}
+	
+	@Bean
+	public static PropertySourcesPlaceholderConfigurer getPropertySourcesPlaceholderConfigurer() {
+		return new PropertySourcesPlaceholderConfigurer();
 	}
 }
