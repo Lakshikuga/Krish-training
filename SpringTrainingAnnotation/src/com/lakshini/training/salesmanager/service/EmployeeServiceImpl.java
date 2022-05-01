@@ -12,8 +12,6 @@ import com.lakshini.training.salesmanager.model.Employee;
 @Service("employeeService")
 public class EmployeeServiceImpl implements EmployeeService {
 	
-	//EmployeeRepository employeeRepository = new HibernateEmployeeRepositoryImpl();
-	
 	//@Autowired //member variable injection
 	EmployeeRepository employeeRepository;
 	
@@ -22,13 +20,12 @@ public class EmployeeServiceImpl implements EmployeeService {
 	*/
 	
 	public EmployeeServiceImpl() {
-		//TODO Auto-generated constructor stub
 		System.out.println("Default constructor executed!");
 	}
-	
+
 	//@Autowired //Constructor injection
 	public EmployeeServiceImpl(EmployeeRepository employeeRepository) {
-		System.out.println("Overloaded consructor executed!");
+		super();
 		this.employeeRepository = employeeRepository;
 	}
 	
@@ -36,8 +33,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 	public EmployeeRepository getEmployeeRepository() {
 		return employeeRepository;
 	}
-	
-	@Autowired //Setter injection
+
+	//@Autowired //Setter injection
 	public void setEmployeeRepository(EmployeeRepository employeeRepository) {
 		System.out.println("Setter injection fired");
 		this.employeeRepository = employeeRepository;
